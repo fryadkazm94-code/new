@@ -98,11 +98,11 @@ h1 {
 }
 
 h1 + p {
-  width: 15%;
   font-size: 2rem;
-  padding: 0.8rem 0;
+  min-width: 10rem;
   border-radius: 3px;
   display: inline-block;
+  padding: 0.8rem 1.6rem;
   color: var(--main-color);
   background-color: #1b3e53;
 }
