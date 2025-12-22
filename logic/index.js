@@ -2,14 +2,11 @@
 
 document.querySelector(".copyright").textContent = new Date().getFullYear();
 
-// selecting the button that actually starts the game(changes the images)
-const playBtn = document.querySelector(".play");
-
-// selecting the result area(the area that will display the winner and looser)
 const result = document.querySelector(".result");
-
-// selecting the reset button which(brings back the default images)
 const resetBtn = document.querySelector(".reset");
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
 
 // selecting both images
 const firstImage = document.querySelector(".first-image");

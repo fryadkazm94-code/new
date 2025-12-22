@@ -166,14 +166,44 @@ body,
   animation: moveInRight 1.05s ease-in-out;
 }
 
-.play {
-  margin-top: 5rem;
+.rock,
+.paper,
+.scissors {
+  width: 20%;
+  border: none;
+  cursor: pointer;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  grid-column: span 2;
+  transition: all 0.35s;
   color: var(--main-color);
   background: var(--button-gradient-start);
+  animation: moveInBottom 1.05s ease-in-out;
 }
 
-.reset,
-.play {
+:where(.rock, .paper, .scissors):hover {
+  overflow-y: hidden;
+  letter-spacing: 1.5px;
+  filter: brightness(1.25);
+}
+
+:where(.rock, .paper, .scissors):active {
+  filter: brightness(0.8);
+}
+
+.buttons {
+  width: 100%;
+  gap: 1.8rem;
+  display: flex;
+  margin-top: 5rem;
+  grid-column: span 2;
+  justify-content: center;
+}
+
+.reset {
   width: 20%;
   border: none;
   padding: 1rem 0;
@@ -200,16 +230,6 @@ body,
   background-color: #1b3e53;
 }
 
-:where(.play):hover {
-  overflow-y: hidden;
-  letter-spacing: 1.5px;
-  filter: brightness(1.25);
-}
-
-:where(.play):active {
-  filter: brightness(0.8);
-}
-
 footer {
   padding: 1rem 0;
   font-size: 1.2rem;
@@ -222,6 +242,7 @@ footer,
 .title {
   animation: moveInTop 1.05s ease-in-out;
 }
+
 @media (max-width: 53.5em) {
   html {
     font-size: 56.25%;
@@ -231,7 +252,6 @@ footer,
     justify-content: center;
   }
 
-  .play,
   .reset {
     width: 26%;
   }
@@ -244,11 +264,6 @@ footer,
 @media (max-width: 41em) {
   section {
     column-gap: 6rem;
-  }
-
-  .play {
-    width: 35%;
-    margin-top: 6rem;
   }
 
   .image-container {
@@ -267,6 +282,17 @@ footer,
     width: 35%;
   }
 
+  .rock,
+  .paper,
+  .scissors {
+    width: 35%;
+  }
+
+  .buttons {
+    gap: 1.2rem;
+    padding: 0 0.6rem;
+  }
+
   h1 + p {
     width: 25%;
   }
@@ -279,17 +305,24 @@ footer,
     flex-direction: column;
   }
 
+  .buttons {
+    padding: 0;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .rock,
+  .paper,
+  .scissors {
+    width: 45%;
+  }
+
   .second-col {
     margin-top: 4.8rem;
   }
 
   .image-container {
     width: 75%;
-  }
-
-  .play {
-    width: 45%;
-    margin-top: 4.8rem;
   }
 
   .reset {
@@ -302,7 +335,6 @@ footer,
 }
 
 @media (max-width: 20.75em) {
-  .play,
   .reset {
     width: 50%;
   }
