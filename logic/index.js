@@ -44,6 +44,25 @@ resetBtn.addEventListener("click", reset);
 // when the user clicks the (rock) button let the user number be 0, and when he/she clicks the paper button
 // let the number 1, and when he/she clicks the scissor button let the number be 2
 // now, each number is corresponding to an image
+let userChoice;
 
-// computer random number: three is excluded
-const computerChoice = Math.trunc(Math.random() * 3);
+const rockHandler = () => {
+  let computerChoice = Math.trunc(Math.random() * 3);
+  userChoice = 0;
+
+  firstImage.src = images[userChoice];
+  secondImage.src = images[computerChoice];
+
+  if (computerChoice != userChoice) {
+    if (userChoice < 1 && computerChoice != 1) {
+      wining();
+    } else {
+      loosing();
+    }
+  } else {
+    draw();
+  }
+};
+
+rockBtn.addEventListener("click", rockHandler);
+paperBtn.addEventListener("click");
