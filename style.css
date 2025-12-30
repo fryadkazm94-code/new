@@ -275,7 +275,7 @@ footer,
   }
 
   h1 {
-    margin-top: 3.2rem;
+    margin-top: 1.8rem;
   }
 
   .reset {
@@ -301,12 +301,16 @@ footer,
 @media (max-width: 26.9em) {
   .grid {
     display: flex;
+    margin-top: 2.8rem;
     align-items: center;
+    padding-top: 0.8rem;
+    margin-bottom: 1.8rem;
     flex-direction: column;
   }
 
   .buttons {
     padding: 0;
+    margin-top: 2.2rem;
     align-items: center;
     flex-direction: column;
   }
@@ -318,7 +322,12 @@ footer,
   }
 
   .second-col {
-    margin-top: 4.8rem;
+    margin-top: 2.4rem;
+  }
+
+  .first-col,
+  .second-col {
+    gap: 2.4rem;
   }
 
   .image-container {
