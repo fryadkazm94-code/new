@@ -11,7 +11,12 @@ const scissorsBtn = document.querySelector(".scissors");
 const firstImage = document.querySelector(".first-image");
 const secondImage = document.querySelector(".second-image");
 
-const images = ["images/rock.webp", "images/paper.webp", "images/scissor.webp"];
+const images = [
+  "images/rock.webp",
+  "images/paper.webp",
+  "images/scissor.webp",
+  "images/initial.webp",
+];
 
 const wining = () => {
   result.style.color = "#D1FFD1";
@@ -31,8 +36,8 @@ const draw = () => {
 const reset = () => {
   result.textContent = "?";
   result.style.color = "#ffffff";
-  secondImage.src = "/images/paper.webp";
-  firstImage.src = "/images/scissor.webp";
+  secondImage.src = "/images/initial.webp";
+  firstImage.src = "/images/initial.webp";
 };
 
 resetBtn.addEventListener("click", reset);
