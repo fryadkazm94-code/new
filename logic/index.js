@@ -11,12 +11,24 @@ const scissorsBtn = document.querySelector(".scissors");
 const firstImage = document.querySelector(".first-image");
 const secondImage = document.querySelector(".second-image");
 
+// alternative text for rock: Rock
+// alternative text for paper: paper
+// alternative text for scissors: scissors
+// alternative text for initial state: No choice selected yet
+
 const images = [
   "images/rock.webp",
   "images/paper.webp",
   "images/scissor.webp",
   "images/initial.webp",
 ];
+
+const alternatives = {
+  0: "Rock",
+  1: "Paper",
+  2: "Scissors",
+  3: "No choice selected yet",
+};
 
 const wining = () => {
   result.style.color = "#D1FFD1";
@@ -36,8 +48,10 @@ const draw = () => {
 const reset = () => {
   result.textContent = "?";
   result.style.color = "#ffffff";
-  secondImage.src = "/images/initial.webp";
-  firstImage.src = "/images/initial.webp";
+  firstImage.alt = alternatives["3"];
+  secondImage.alt = alternatives["3"];
+  firstImage.src = "images/initial.webp";
+  secondImage.src = "images/initial.webp";
 };
 
 resetBtn.addEventListener("click", reset);
@@ -50,6 +64,9 @@ let userChoice;
 const rockHandler = () => {
   let computerChoice = Math.trunc(Math.random() * 3);
   userChoice = 0;
+
+  firstImage.alt = "Rock";
+  secondImage.alt = alternatives[computerChoice];
 
   firstImage.src = images[userChoice];
   secondImage.src = images[computerChoice];
@@ -69,6 +86,9 @@ const paperHandler = () => {
   let computerChoice = Math.trunc(Math.random() * 3);
   userChoice = 1;
 
+  firstImage.alt = "Paper";
+  secondImage.alt = alternatives[computerChoice];
+
   firstImage.src = images[userChoice];
   secondImage.src = images[computerChoice];
 
@@ -87,11 +107,14 @@ const scissorsHandler = () => {
   let computerChoice = Math.trunc(Math.random() * 3);
   userChoice = 2;
 
+  firstImage.alt = "Scissors";
+  secondImage.alt = alternatives[computerChoice];
+
   firstImage.src = images[userChoice];
   secondImage.src = images[computerChoice];
 
   if (computerChoice != userChoice) {
-    if (userChoice && computerChoice != 0) {
+    if (computerChoice != 0) {
       wining();
     } else {
       loosing();
