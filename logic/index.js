@@ -30,14 +30,14 @@ const alternatives = {
   3: "No choice selected yet",
 };
 
-const wining = () => {
-  result.style.color = "#D1FFD1";
+const winning = () => {
   result.textContent = "You won!";
+  result.style.color = "#D1FFD1";
 };
 
-const loosing = () => {
-  result.style.color = "#FF8F8F";
+const losing = () => {
   result.textContent = "You lost!";
+  result.style.color = "#FF8F8F";
 };
 
 const draw = () => {
@@ -73,9 +73,9 @@ const rockHandler = () => {
 
   if (computerChoice != userChoice) {
     if (userChoice < 1 && computerChoice != 1) {
-      wining();
+      winning();
     } else {
-      loosing();
+      losing();
     }
   } else {
     draw();
@@ -94,9 +94,9 @@ const paperHandler = () => {
 
   if (computerChoice != userChoice) {
     if (userChoice > 0 && computerChoice != 2) {
-      wining();
+      winning();
     } else {
-      loosing();
+      losing();
     }
   } else {
     draw();
@@ -115,9 +115,9 @@ const scissorsHandler = () => {
 
   if (computerChoice != userChoice) {
     if (computerChoice != 0) {
-      wining();
+      winning();
     } else {
-      loosing();
+      losing();
     }
   } else {
     draw();
@@ -127,3 +127,19 @@ const scissorsHandler = () => {
 rockBtn.addEventListener("click", rockHandler);
 paperBtn.addEventListener("click", paperHandler);
 scissorsBtn.addEventListener("click", scissorsHandler);
+
+const observer = new IntersectionObserverEntry(
+  function (entries) {
+    const ent = entries[0];
+
+    if (!ent.isIntersecting) {
+      document.querySelector(".second-col").classList.remove("hidden");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+  }
+);
+
+observer.observe(document.querySelector(".second-col"));
