@@ -1,6 +1,6 @@
 "use strict";
 
-document.querySelector(".copyright").textContent = new Date().getFullYear();
+// document.querySelector(".copyright").textContent = new Date().getFullYear();
 
 const result = document.querySelector(".result");
 const resetBtn = document.querySelector(".reset");
@@ -127,19 +127,3 @@ const scissorsHandler = () => {
 rockBtn.addEventListener("click", rockHandler);
 paperBtn.addEventListener("click", paperHandler);
 scissorsBtn.addEventListener("click", scissorsHandler);
-
-const observer = new IntersectionObserverEntry(
-  function (entries) {
-    const ent = entries[0];
-
-    if (!ent.isIntersecting) {
-      document.querySelector(".second-col").classList.remove("hidden");
-    }
-  },
-  {
-    root: null,
-    threshold: 0,
-  }
-);
-
-observer.observe(document.querySelector(".second-col"));

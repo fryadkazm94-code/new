@@ -146,20 +146,24 @@ img {
 }
 
 .to-top-icon {
-  top: 50%;
-  right: 1.2rem;
-  width: 4.8rem;
-  height: 4.8rem;
+  opacity: 0;
+  width: 4.6rem;
+  display: none;
+  height: 4.6rem;
   color: #ffffff;
   stroke-width: 2px;
   border-radius: 50%;
-  position: absolute;
+  pointer-events: none;
 }
 
-.hidden {
-  opacity: 0;
-  display: hidden;
-  pointer-events: none;
+.to-top-container {
+  top: 50%;
+  gap: 0.2rem;
+  right: 1rem;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  transform: translateY(-50%);
 }
 
 .first-col,
@@ -337,6 +341,12 @@ footer,
     margin-top: 1rem;
     align-items: center;
     flex-direction: column;
+  }
+
+  .to-top-icon {
+    opacity: 1;
+    display: block;
+    pointer-events: auto;
   }
 
   .rock,

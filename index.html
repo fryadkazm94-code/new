@@ -53,7 +53,7 @@
 
   <body>
     <main>
-      <div class="title">
+      <div id="top" class="title">
         <span
           ><svg
             class="scissor"
@@ -98,7 +98,7 @@
           </div>
         </div>
 
-        <fieldset class="buttons" aria-label="Choose your move">
+        <fieldset id="buttons" class="buttons" aria-label="Choose your move">
           <button class="rock" title="rock">Rock</button
           ><button class="paper" title="paper">Paper</button
           ><button class="scissors" title="scissors">Scissors</button>
@@ -113,15 +113,15 @@
     </footer> -->
 
     <div class="to-top-container">
-      <a href=""
-        ><ion-icon
-          name="chevron-up-circle"
-          class="to-top-icon hidden"
-        ></ion-icon
+      <a href="#top"
+        ><ion-icon name="chevron-up-circle" class="to-top-icon"></ion-icon
+      ></a>
+      <a href="#buttons"
+        ><ion-icon class="to-top-icon" name="chevron-down-circle"></ion-icon
       ></a>
     </div>
 
-    <script src="logic/index.js"></script>
+    <script src="logic/logic.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
