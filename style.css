@@ -194,9 +194,7 @@ body,
   animation: moveInRight 1.05s ease-in-out;
 }
 
-.rock,
-.paper,
-.scissors {
+.button {
   width: 20%;
   border: none;
   cursor: pointer;
@@ -207,24 +205,18 @@ body,
   grid-column: span 2;
   transition: all 0.35s;
   color: var(--main-color);
-  background: var(--button-gradient-start);
   animation: moveInBottom 1.05s ease-in-out;
+  background: linear-gradient(145deg, #064374, #2a86d2);
 }
 
 @media (hover: hover) {
-  :where(.rock, .paper, .scissors):hover {
+  :where(.button):hover {
     letter-spacing: 1.5px;
     filter: brightness(1.25);
   }
-
-  :where(.reset):hover {
-    color: var(--main-color);
-    background-color: transparent;
-    box-shadow: inset 0 0 0 1px currentColor;
-  }
 }
 
-:where(.rock, .paper, .scissors):active {
+:where(.button):active {
   filter: brightness(0.8);
 }
 
@@ -245,17 +237,15 @@ body,
   font-weight: 600;
   font-size: 1.5rem;
   border-radius: 5px;
+  margin-top: 0.8rem;
   grid-column: span 2;
   transition: all 0.35s;
   animation: moveInBottom 1.05s ease-in-out;
-}
-
-.reset {
-  margin-top: 0.8rem;
+  background: linear-gradient(225deg, #e6e6e6, #ffffff);
 }
 
 :where(.reset):active {
-  background-color: #1b3e53;
+  opacity: 0.75;
 }
 
 footer {
@@ -310,9 +300,7 @@ footer,
     width: 35%;
   }
 
-  .rock,
-  .paper,
-  .scissors {
+  .button {
     width: 35%;
   }
 
@@ -349,9 +337,7 @@ footer,
     pointer-events: auto;
   }
 
-  .rock,
-  .paper,
-  .scissors {
+  .button {
     width: 45%;
   }
 
