@@ -217,7 +217,6 @@ body,
 
   :where(.reset):hover {
     color: #000000 !important;
-    border: 2px solid var(--main-color);
     background-color: var(--main-color) !important;
   }
 }
@@ -248,7 +247,7 @@ body,
   transition: all 0.35s;
   color: var(--main-color);
   background-color: transparent;
-  border: 2px solid var(--main-color);
+  box-shadow: inset 0 0 0 2px var(--main-color);
   animation: moveInBottom 1.05s ease-in-out;
 }
 
